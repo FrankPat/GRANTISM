@@ -25,12 +25,54 @@ User's Guide
 The GRANTISM model enables you to carry out climate experiments with the Greenland and Antarctic ice sheet. The model is completely based on the physical principles described above. More detailed information on the model description and its numerics are found here. Boundary conditions to the model are snow accumulation at the surface and yearly mean surface temperature. The model is a so-called flowline model, i.e. the ice sheet is simulated along a flowline running through the central part of the present ice sheet (Figure 1). Two parameters may be changed by the user. These are:
 
 ![image](https://user-images.githubusercontent.com/62480664/183938543-f52f1ad2-e1f2-4f80-9cf3-8d4b6c6b5f8f.png)
+
 Figure 1: Situation of the modeled flowlines (thick lines) through the Greenland (left) and Antarctic (right) ice sheet.
 
 RUN = 0, 1 or 2. This parameter permits the model to run. The model starts initially from the present basal topography of the ice sheet, without ice and isostatically adjusted for the lack of ice (RUN = 0). You can also start from the present ice-sheet conditions by setting RUN = 2. If subsequently RUN is set to 1 (type 1 in the appropriate cell, followed by <ENTER> to validate your choice), every year another layer of ice (snow) will be added to the model. The thickness of this layer is determined by the yearly amount of accumulation. Generally, accumulation is higher at the coast than in the center of the ice sheet. The model time step is 200 years for the Antarctic ice sheet, and when you let the model run, 20 iterations are carried out at once (= 4000 years). You have to press F9 a number of times (each time another 20 iterations are carried out) before the ice sheet reaches a steady-state condition. For an Apple Mac computer press the command button together with the = button, i.e. <COMMAND>+<=>. When the ice sheet is in steady state the volume does not change anymore and should mark 100% for the standard experiment.
 
 TFOR. This parameter controls the changes in global mean (background) air temperature. For simulating the present environmental conditions, TFOR = 0. Before running the model with a particular value, one starts best with RUN set to 0 or 2, then assigning a value for TFOR, and subsequently setting RUN equal to 1. Use the F9 button to bring the model ice sheet to a new equilibrium.
 
+Additional parameters
+  
+Optional parameters are listed in the spreadsheet below the control parameters. They are BASALSL, TKOPP, DATASET, BEDADJ, and SEALEV. BASALSL controls basal sliding in the model. Set to 0, the ice sheet remains frozen to the bed (default = 1). TKOPP introduces the ice-temperature coupling, otherwise an isothermal ice sheet is considered (default = 1). DATASET selects the model domain: 1 stands for the Antarctic ice sheet, 2 for Greenland and 0 for a initial flat bedrock (ideal ice sheet). BEDADJ controls isostatic bed adjustment (default = 1, activated). Finally, SEALEV introduces the sea-level lowering for colder background temperatures associated with the formation of Northern Hemisphere ice sheets (default = 1).
 
+Troubleshooting
+  
+Circular reference error: in the TOOLS menu, go to OPTIONS. Choose CALCULATION and thick the box in front of ITERATION.
+
+Advanced features
+
+Changing the iteration scheme: in the TOOLS menu, go to OPTIONS. Choose CALCULATION and set maximum iterations.
+
+Changing values in the spreadsheet: go to the sheet of interest (Model or Calculations) and select all cells (CTRL+A). In the DATA menu, choose VALIDATION. Check CLEAR ALL. Now you can edit the spreadsheet.
+
+Examples of experiments
+
+What kind of experiments should you carry out? Well, let the model run with different values for TFOR, e.g. -10, -5, 0, 5, 10, 15 and 20°C. Write down your findings, i.e. what is the ice volume for each of these experiments (in percentage of the present steady-state value); what is the surface temperature in the center of the ice sheet and at the edge (coast); what is the accumulation / ablation at these areas, ... Afterwards you can analyse you findings and try to explain some of them. Here follow some hints:
+
+Antarctic ice sheet
+
+For a colder climate our model ice sheet becomes bigger, while the accumulation rate in the interior of the ice sheet is lower than at present. The latter is explained by the fact that very cold air is also very dry and cannot contain much moisture. Look at the ice velocities and you will see that they are much lower than the present modelled ones. This shows that the ice viscosity changed: ice became stiffer, which makes the ice sheet grows somewhat larger. The ice sheet expands also laterally, due to the presence of Northern Hemisphere ice sheets which make the sea level lower significantly.
+
+For a warmer climate (+5, +10°C) the ice sheet seems to grow bigger as well, even though melting occurs at the edges and the ice sheet flows faster, due to the higher viscosity with warmer temperatures. However, the accumulation over the vast interior of the ice sheet has increased, since warmer air can contain more moisture, which results in an increased precipitation. Significant melting occurs at the edge of the model ice sheet.
+
+Only at higher background temperatures (+15, +20°C) the ice sheet starts to reduce in size, this because melting becomes decisive. Not only summer temperatures are above melting point, also the yearly mean temperature reaches positive values, implying year-round positive temperature, and hence ablation.
+
+  
+![image](https://user-images.githubusercontent.com/62480664/183939104-6665ac0d-d4e3-4e86-8b59-fd5527b85793.png)
+
+Figure 2: Steady-state Antarctic ice-sheet configuration under present climate conditions (TFOR = 0). Upper left panel: ice-sheet geometry (observed and modeled, m a.s.l.); upper right panel: surface and basal velocity (m/a); lower left panel: surface mass balance, accumulation and ablation (m/a); lower right panel: annual mean and summer mean surface temperature (°C).
+  
+Greenland ice sheet
+
+For a colder climate our model ice sheet becomes bigger, primarily due to less surface melting (accumulation area is larger). The eustatic sea level lowers as well due to the presence of Northern Hemisphere ice sheets, so that the ice sheet can gradually expand horizontally.
+
+For a slightly warmer climate the Greenland ice sheet becomes smaller, due to higher melting rates. When the temperature becomes more than 5°C higher, the model ice sheet will disappear completely. This shows that the Greenland ice sheet is much more sensitive to climate than the Antarctic ice sheet.
+
+When starting from conditions that no ice sheet is present (RUN = 0), the Greenland ice sheet will only develop when the background temperature is lower than +1°C. This is due to the masss balance-elevation feedback and demonstrates that the Greenland ice sheet is a remnant of the Last Glacial period.
+  
+![image](https://user-images.githubusercontent.com/62480664/183939339-fb25c7e2-887d-432a-8079-8e0cb11631ad.png)
+
+Figure 3: Steady-state Greenland ice-sheet configuration under present climate conditions (TFOR = 0). Upper left panel: ice-sheet geometry (observed and modeled, m a.s.l.); upper right panel: surface and basal velocity (m/a); lower left panel: surface mass balance, accumulation and ablation (m/a); lower right panel: annual mean and summer mean surface temperature (°C).
   
   
